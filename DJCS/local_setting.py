@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#weq_6&p^4quv1e8yb@xdw3cij7l^b@yrm#b5x3nm$g6ghu0ku'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['csproyecto.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -52,6 +52,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'DJCS.urls'
+
+SITE_ID = 1
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated',],
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}
 
 TEMPLATES = [
     {
@@ -120,8 +129,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-try:
-    from DJCS.local_setting import *
-except ImportError:
-    pass
