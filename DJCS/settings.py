@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+import django_heroku
 ALLOWED_HOSTS = ['csproyecto.herokuapp.com']
 
-
+django_heroku.settings(locals())
 # Application definition
 
 INSTALLED_APPS = [
@@ -160,6 +160,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 try:
     from DJCS.local_setting import *
