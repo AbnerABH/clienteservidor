@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-import django_heroku
+
 ALLOWED_HOSTS = ['csproyecto.herokuapp.com']
 
-django_heroku.settings(locals())
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 ]
 SITE_ID = 1
+
 
 
 REST_FRAMEWORK = {
@@ -62,36 +63,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'DJCS.urls'
-
-SWAGGER_SETTINGS = {
-
-    'USE_SESSION_AUTH': False,
-
-    'api_version': '0.1',
-
-    'enabled_methods': [
-
-        'get',
-
-        'post',
-
-    ],
-
-    'SECURITY_DEFINITIONS': {
-
-        "api_key": {
-
-            "type": "apiKey",
-
-            "name": "Authorization",
-
-            "in": "header"
-
-          },
-
-    },
-
-}
 
 TEMPLATES = [
     {
@@ -160,10 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 try:
-    from DJCS.local_setting import *
+    from DJCS.local_settings import *
 except ImportError:
     pass
