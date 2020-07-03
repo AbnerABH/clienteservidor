@@ -4,7 +4,7 @@ from django.urls import path, re_path
 from django.conf.urls import url, include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-from rest_framework_swagger.views import get_swagger_view
+
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -20,11 +20,10 @@ class UserViewSet(viewsets.ModelViewSet):
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-#schema_view = get_swagger_view(title='Pastebin API')
+
 
 
 urlpatterns = [
-    #path('swagger/', schema_view),
     path('admin/', admin.site.urls),
     re_path(r'^', include(router.urls))
 
