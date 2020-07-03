@@ -30,5 +30,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'swagger/', schema_view),
     url(r'^', include(router.urls)),
-
 ]
