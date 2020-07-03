@@ -37,7 +37,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    path('api_Pastein/', schema_view),
+    url('^api_Pastein/', schema_view),
     path('admin/', admin.site.urls),
     re_path(r'^', include(router.urls))
 ]
