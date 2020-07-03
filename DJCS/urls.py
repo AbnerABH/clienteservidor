@@ -28,4 +28,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'swagger/', schema_view),
     re_path(r'^', include(router.urls))
+
 ]
