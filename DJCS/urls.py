@@ -26,7 +26,7 @@ router.register(r'users', UserViewSet)
 schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
-    url(r'^api-auth/', include('rest_framework.urls')),
+    
     path('admin/', admin.site.urls),
     path(r'swagger/', schema_view),
     url(r'^', include(router.urls)),
