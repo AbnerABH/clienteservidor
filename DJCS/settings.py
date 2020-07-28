@@ -18,7 +18,7 @@ import dj_database_url
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'SECRET_KEY'
-
+DEBUG = True
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 EMAIL_HOST = config('EMAIL_HOST', default='localhost')
