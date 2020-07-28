@@ -44,10 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
-    'Login',
-    'Example1',
-    'Example2',
-    'Registro',
+    
 ]
 SITE_ID=1
 
