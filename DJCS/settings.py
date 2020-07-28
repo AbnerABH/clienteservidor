@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 EMAIL_HOST = config('EMAIL_HOST', default='localhost')
 EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
-ALLOWED_HOSTS = ['primeraactividad.herokuapp.com']
+ALLOWED_HOSTS = ['csproyecto.herokuapp.com']
 #primeraactividad.herokuapp.com sube por favor a
 #importamos para hacer decouple
 
